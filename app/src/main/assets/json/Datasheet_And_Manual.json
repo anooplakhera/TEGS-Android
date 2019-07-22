@@ -1,0 +1,365 @@
+{
+  "data": [
+    {
+      "title": "SMARTY 7 Above Ground Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Brushless SMARTY 7 above ground kit capable of opening a 7m gate leaf, uper intensive use, with digital encoder.",
+      "doc": "Roger Brushless  SMARTY 7 Data Sheet",
+      "catetory": "Motors",
+      "type": "datasheet"
+    },
+//    {
+//      "title": "Agilik Barrier Series",
+//      "date": "1st May 2018",
+//      "addr": "",
+//      "desc": "Super intensive brushless barrier from Roger Technology with a 24/7 duty cycle.",
+//      "doc": "Roger Brushless Agilik Barrier Data Sheet",
+//      "catetory": "Motors",
+//      "type": "datasheet"
+//    },
+    {
+      "title": "BE20/200 High Speed Above Ground Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless high speed BE20/200 twin gate kit for gates up to 2.2m per wing, 24v, super intensive use, with digital encoder.",
+      "doc": "Roger Brushless BE20_200 High Speed Data Sheet",
+      "catetory": "Swing Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BE20/210 Above Ground Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless BE20/210 twin gate kit for gates up to 2.2m per wing, 24v, super intensive use, with digital encoder.",
+      "doc": "Roger Brushless BE20210 Data Sheet",
+      "catetory": "Swing Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BG30 1004 High Speed Sliding Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology 1000kg high speed BG30 1004 sliding gate kit featuring the latest brushless motor technology and safety.",
+      "doc": "Roger Brushless BG30 1004 High Speed Data Sheet",
+      "catetory": "Sliding Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BG30 1604 Sliding Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology heavy duty 1600kg BG30 1604 sliding gate kit featuring the latest brushless motor technology and safety.",
+      "doc": "Roger Brushless BG30 1604 Data Sheet",
+      "catetory": "Sliding Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BG30 2204 Sliding Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology heavy duty 2200kg BG30 2204 sliding gate kit featuring the latest brushless motor technology and safety.",
+      "doc": "Roger Brushless BG30 2204 Data Sheet",
+      "catetory": "Sliding Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BH23 284 Sliding Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless BH23/284 articulated twin gate kit for gates up to 2.8m per wing, 24v, super intensive use, with digital encoder.",
+      "doc": "Roger Brushless BH23 284 Data Sheet",
+      "catetory": "Sliding Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BH30/504 High Speed Above Ground Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology 500kg high speed BH30 504 sliding gate kit featuring the latest brushless motor technology and safety.  ",
+      "doc": "Roger Brushless BH30 504 HS Data Sheet",
+      "catetory": "Sliding Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BH30 603 Sliding Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology 600kg BH30 603 sliding gate kit featuring the latest brushless motor technology and safety.",
+      "doc": "Roger Brushless BH30 603 Data Sheet",
+      "catetory": "Sliding Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BH30 803 Sliding Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology 1000kg BH30 803 sliding gate kit featuring the latest brushless motor technology and safety.",
+      "doc": "Roger Brushless BH30 803 Data Sheet",
+      "catetory": "Sliding Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BM30 304 Sliding Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology 400kg high speed BH30 304 sliding gate kit featuring the latest brushless motor technology and safety.",
+      "doc": "Roger Brushless BM30 304 High Speed Data Sheet",
+      "catetory": "Sliding Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BR20 500 Above Gound Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless high speed BR20/500 twin gate kit for gates up to 3.5m per wing, 24v, super intensive use, with digital encoder. ",
+      "doc": "Roger Brushless BR20 500 Data Sheet",
+      "catetory": "Swing Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "BR21 362 Above Gound Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless BR21/362 underground gate kit for gates up to 4m per wing, 24v, super intensive use, with digital encoder. ",
+      "doc": "Roger Brushless BR21 362 Data Sheet",
+      "catetory": "Swing Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "SMARTY 4 High Speed Above Ground Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Brushless high speed SMARTY above ground kit capable of opening a 7m gate leaf, uper intensive use, with digital encoder.",
+      "doc": "Roger Brushless SMARTY 4 High Speed Data Sheet",
+      "catetory": "Swing Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "SMARTY 5 Above Ground Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Brushless SMARTY 5 above ground kit capable of opening a 5m gate leaf, uper intensive use, with digital encoder.",
+      "doc": "Roger Brushless SMARTY 5 Data Sheet",
+      "catetory": "Swing Gate Motors",
+      "type": "datasheet"
+    },
+    {
+      "title": "Roger Technology E80 Remote Control",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Technology 433Mhz E80 remote used to open all Brushless systems.",
+      "doc": "Roger Technology E80 Remote Data Sheet",
+      "catetory": "Accessories",
+      "type": "datasheet"
+    },
+    {
+      "title": "Roger Technology R90 Photocells",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Technology R90 Photocells specially designed for all Brushless systems.",
+      "doc": "Roger Technology R90 Photocells Wiring Diagram _ Data Sheet",
+      "catetory": "Accessories",
+      "type": "datasheet"
+    },
+    {
+      "title": "Roger Technology E80 Remote Control",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Technology 433Mhz E80 remote used to open all Brushless systems.",
+      "doc": "Roger Technology E80 Remote Manual",
+      "catetory": "Accessories",
+      "type": "manuals"
+    },
+    {
+      "title": "Roger Technology H85 Keypads",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Wireless Keypad designed for use with Roger Technology gate kits.",
+      "doc": "Roger Technology H85 Keypad Manual",
+      "catetory": "Accessories",
+      "type": "manuals"
+    },
+    {
+      "title": "Roger Technology H93 Receiver",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Technology receiver card used the E80 & the Brushless control panels.",
+      "doc": "Roger Technology H93 Receiver Manual",
+      "catetory": "Accessories",
+      "type": "manuals"
+    },
+    {
+      "title": "Roger Technology R90 Photocells",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Technology R90 Photocells specially designed for all Brushless systems.",
+      "doc": "Roger Technology R90 Photocells Manual",
+      "catetory": "Accessories",
+      "type": "manuals"
+    },
+    {
+      "title": "B70-1DC Control Panel",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology Brushless B70/1DC Control Board for Sliding Gates, 24v Control Board with digital encoder.",
+      "doc": "Roger Technology B70-1DC Sliding Gate Control Panel Manual",
+      "catetory": "Control Panels",
+      "type": "manuals"
+    },
+    {
+      "title": "B70-2DC Control Panel",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology Brushless B70/2DC/HP/BOX 36v control board.",
+      "doc": "Roger Technology B70-2DC Swing Gate Control Panel Manual",
+      "catetory": "Control Panels",
+      "type": "manuals"
+    },
+    {
+      "title": "Edge 1 Control Panel",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless Edge 1 36v Control Panel for all 36v Roger Brushless systems including underground.",
+      "doc": "Roger Technology EDGE1 Control Panel Manual",
+      "catetory": "Control Panels",
+      "type": "manuals"
+    },
+    {
+      "title": "AG CTRL Bionik Control Panel",
+      "date": "1st June 2018",
+      "addr": "",
+      "desc": "Roger Technology Brushless AG CTRL Control Board for 36v Bionik Control Panel.",
+      "doc": "CTRL Barrier Control Panel Manual",
+      "catetory": "Control Panels",
+      "type": "manuals"
+    },
+    {
+      "title": "B70-2DCHP Control Panel",
+      "date": "1st June 2018",
+      "addr": "",
+      "desc": "Roger Technology Brushless B70/2DCHP Control Board for Swing Gates, 36v Control Board with digital encoder.",
+      "doc": "Roger Technology B70-2DCHP Swing Gate Control Panel Manual",
+      "catetory": "Control Panels",
+      "type": "manuals"
+    },
+    {
+      "title": "B70-1DCHP Control Panel",
+      "date": "1st June 2018",
+      "addr": "",
+      "desc": "Roger Technology Brushless B70/1DCHP Control Board for Sliding Gates, 36v Control Board with digital encoder.",
+      "doc": "Roger Technology B70-1DC Sliding Gate Control Panel Manual",
+      "catetory": "Control Panels",
+      "type": "manuals"
+    },
+
+//    {
+//      "title": "Agilik Barrier Series",
+//      "date": "1st May 2018",
+//      "addr": "",
+//      "desc": "Super intensive brushless barrier from Roger Technology with a 24/7 duty cycle.",
+//      "doc": "Roger Brushless AGILIK Barrier Manual",
+//      "catetory": "Motors",
+//      "type": "manuals"
+//    },
+    {
+      "title": "Bionik Barrier Series",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Brushless Bionik 36V DC super intensive barrier has a boom of up to 4 metres and a built-in digital control panel with on board encoder.",
+      "doc": "Roger Brushless Bionik Barrier CTRL Manual",
+      "catetory": "Barrrier Gate Motors",
+      "type": "manuals"
+    },
+    {
+      "title": "BE20/200 High Speed Above Ground Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless high speed BE20/200 twin gate kit for gates up to 2.2m per wing, 24v, super intensive use, with digital encoder. ",
+      "doc": "Roger Brushless BE20 High Speed Manual",
+      "catetory": "Swing Gate Motors",
+      "type": "manuals"
+    },
+    {
+      "title": "BG30 Sliding Gate Motor Series",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology BG30 heavy duty sliding gate kit series featuring the latest brushless motor technology and safety.",
+      "doc": "Roger Brushless BG30 Series Manual",
+      "catetory": "Sliding Gate Motors",
+      "type": "manuals"
+    },
+    {
+      "title": "BH23 284 304 Sliding Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless BH23/284 articulated twin gate kit for gates up to 2.8m per wing, 24v, super intensive use, with digital encoder. ",
+      "doc": "Roger Brushless BH23 284 Manual",
+      "catetory": "Sliding Gate Motors",
+      "type": "manuals"
+    },
+    {
+      "title": "BH30 803 304 Sliding Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology 1000kg BH30 803 sliding gate kit featuring the latest brushless motor technology and safety.",
+      "doc": "Roger Brushless BH30 803 Manual",
+      "catetory": "Sliding Gate Motors",
+      "type": "manuals"
+    },
+    {
+      "title": "BM30 304 High Speed Sliding Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology 400kg high speed BH30 304 sliding gate kit featuring the latest brushless motor technology and safety.",
+      "doc": "Roger Brushless BM30 304 High Speed Manual",
+      "catetory": "Sliding Gate Motors",
+      "type": "manuals"
+    },
+    {
+      "title": "BR20 500 Above Gound Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless high speed BR20/500 twin gate kit for gates up to 3.5m per wing, 24v, super intensive use, with digital encoder. ",
+      "doc": "Roger Brushless BR20 500 Manual",
+      "catetory": "Swing Gate Motors",
+      "type": "manuals"
+    },
+    {
+      "title": "BR21 362 Above Gound Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless BR21/362 underground gate kit for gates up to 4m per wing, 24v, super intensive use, with digital encoder. ",
+      "doc": "Roger Brushless BR21 362 Manual",
+      "catetory": "Swing Gate Motors",
+      "type": "manuals"
+    },
+    {
+      "title": "SMARTY 4 High Speed Above Ground Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Brushless high speed SMARTY above ground kit capable of opening a 7m gate leaf, uper intensive use, with digital encoders",
+      "doc": "Roger Brushless SMARTY 4 High Speed Manual",
+      "catetory": "Swing Gate Motors",
+      "type": "manuals"
+    },
+    {
+      "title": "SMARTY Above Ground Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Brushless SMARTY above ground kit capable of opening a 7m gate leaf, uper intensive use, with digital encoder.",
+      "doc": "Roger Brushless SMARTY Series Manual",
+      "catetory": "Swing Gate Motors",
+      "type": "manuals"
+    },
+    {
+      "title": "M90 180 Above Gound Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Brushless SMARTY above ground kit capable of opening a 7m gate leaf, uper intensive use, with digital encoder.",
+      "doc": "M90 180 Degree Photocells Manual",
+      "catetory": "Motors",
+      "type": "manuals"
+    }
+  ]
+}

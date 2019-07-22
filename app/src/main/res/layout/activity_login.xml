@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appBackgroundColor"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtSkipLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:layout_margin="@dimen/dp_10"
+            android:drawableRight="@drawable/ic_right_arrow"
+            android:drawablePadding="@dimen/dp_3"
+            android:padding="5dp"
+            android:text="Skip"
+            android:textColor="@color/colorAppGray"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/appBackgroundColor"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:src="@drawable/img_tegs_logo" />
+
+                <LinearLayout
+                    android:id="@+id/lnr_login_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/commonTextHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/semi_rounded_primary_color"
+                        android:text="@string/lets_start" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/semi_rectangle_grey_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_20">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5">
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/et_email"
+                                style="@style/commonEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/img_email_filled"
+                                android:drawableLeft="@drawable/img_email_filled"
+                                android:hint="@string/email_id"
+                                android:imeOptions="actionNext"
+                                android:inputType="textEmailAddress" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/commonHintColor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/et_password"
+                                style="@style/commonEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/img_lock"
+                                android:drawableLeft="@drawable/img_lock"
+                                android:hint="@string/password"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPassword" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/checkbox_remember_me"
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:checked="true"
+                                android:fontFamily="@font/lato_regular"
+                                android:text="@string/remember_me"
+                                android:textColor="@color/colorTextView"
+                                android:textSize="@dimen/sp_15" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/txt_forgot_password"
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:fontFamily="@font/lato_regular"
+                                android:gravity="end"
+                                android:text="@string/login_forgot_password"
+                                android:textColor="@color/colorTextView"
+                                android:textSize="@dimen/sp_14"
+                                android:textStyle="italic" />
+                        </LinearLayout>
+
+                        <android.support.v7.widget.AppCompatButton
+                            android:id="@+id/btn_login"
+                            style="@style/commonButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:paddingLeft="@dimen/dp_70"
+                            android:paddingRight="@dimen/dp_70"
+                            android:text="@string/btn_login" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_10">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="@string/dont_have_acc"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorTextView"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="italic" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txt_sign_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_5"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="@string/sign_up"
+                        android:textColor="@color/colorOrange"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

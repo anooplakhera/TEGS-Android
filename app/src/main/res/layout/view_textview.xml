@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.AppCompatTextView
+    android:id="@+id/txtTextView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:textColor="@color/colorOrange"
+    android:textSize="@dimen/sp_17"
+    android:fontFamily="@font/lato_bold"
+    android:layout_marginLeft="@dimen/dp_7"
+    android:layout_marginRight="@dimen/dp_3"
+    android:layout_marginBottom="@dimen/dp_1"/>

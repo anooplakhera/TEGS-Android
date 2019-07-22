@@ -1,0 +1,76 @@
+{
+  "data": [
+    //    {
+    //      "title": "Agilik Barrier Series",
+    //      "date": "1st May 2018",
+    //      "addr": "",
+    //      "desc": "Super intensive brushless barrier from Roger Technology with a 24/7 duty cycle.",
+    //      "doc": "Roger Brushless Agilik Barrier Brochure",
+    //      "catetory": "Motors",
+    //      "type": "brochures"
+    //    },
+    {
+      "title": "Bionik Barrier",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Brushless Bionik 36V DC super intensive barrier has a boom of up to 4 metres and a built-in digital control panel with on board encoder.",
+      "doc": "Roger Brushless Bionik Barrier Brochure",
+      "catetory": "Barrrier Gate Motors",
+      "type": "brochures"
+    },
+    {
+      "title": "BE20/210 Above Gound Gate Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless BE20/210 twin gate kit for gates up to 2.2m per wing, 24v, super intensive use, with digital encoder.",
+      "doc": "Brochure_BE20_ENG_2016 Compressed",
+      "catetory": "Swing Gate Motors",
+      "type": "brochures"
+    },
+    {
+      "title": "BG30 Sliding Gate Motor Series",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology BG30 sliding gate kit series featuring the latest brushless motor technology and safety.",
+      "doc": "Brochure_BG30_ENG_2016 Compressed",
+      "catetory": "Sliding Gate Motors",
+      "type": "brochures"
+    },
+    {
+      "title": "BH30 Sliding Gate Motor Series",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Technology BH30 24V sliding gate kit series featuring the latest brushless motor technology and safety.",
+      "doc": "Brochure_BH30_ENG_2016 Compressed",
+      "catetory": "Sliding Gate Motors",
+      "type": "brochures"
+    },
+    {
+      "title": "BR21/362 Underground Motor",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "Roger Brushless BR21/362 underground gate kit for gates up to 4m per wing, 24v, super intensive use, with digital encoder. ",
+      "doc": "Brochure_BR21_ENG_2016 Compressed",
+      "catetory": "Swing Gate Motors",
+      "type": "brochures"
+    },
+    {
+      "title": "SMARTY Above Ground Gate Motor Series",
+      "date": "1st May 2018",
+      "addr": "",
+      "desc": "The Roger Brushless SMARTY above ground kit series capable of opening a 7m gate leaf, uper intensive use, with digital encoder.",
+      "doc": "Roger Brushless SMARTY Brochure",
+      "catetory": "Swing Gate Motors",
+      "type": "brochures"
+    },
+    {
+      "title": "BM30 BM30/304/HS High Speed",
+      "date": "27th Jul 2018",
+      "addr": "",
+      "desc": "Roger Technology BM30/304 24V high speed gate kit featuring the latest Brushless motor technology.",
+      "doc": "Roger Brochure BM30 Series",
+      "catetory": "Sliding Gate Motors",
+      "type": "brochures"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appBackgroundColor"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_toolbar" />
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_15"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/llAddImages"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_150"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:background="@drawable/rounded_corner_grey_radius_8"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/ll_Pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/view_Pager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </FrameLayout>
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txt_add_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableTop="@drawable/img_rec_add_image"
+                        android:gravity="center"
+                        android:text="@string/add_image" />
+
+                </FrameLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/commonTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/make" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:background="@drawable/rounded_corner_white_grey_stroke"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="@string/make"
+                    android:inputType="textCapWords"
+                    android:padding="@dimen/dp_15"
+                    android:singleLine="true"
+                    android:textColor="@color/colorBlack" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/commonTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/model_name" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_modal_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:background="@drawable/rounded_corner_white_grey_stroke"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="@string/model_name"
+                    android:inputType="text"
+                    android:padding="@dimen/dp_15"
+                    android:singleLine="true"
+                    android:textColor="@color/colorBlack" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/commonTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/message" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:background="@drawable/rounded_corner_white_grey_stroke"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="top"
+                    android:hint="@string/type_your_msg"
+                    android:inputType="text|textMultiLine"
+                    android:overScrollMode="always"
+                    android:padding="@dimen/dp_15"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:textSize="@dimen/sp_15" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner_dark_grey_with_effect"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="@string/btn_cancel"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/sp_18"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/btn_submit"
+                        style="@style/commonButton"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:text="@string/btn_submit" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appBackgroundColor"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_toolbar" />
+
+        <include layout="@layout/common_search_bar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_spare_parts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recView_spare_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txt_empty_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/no_data_found"
+                android:textColor="@color/colorOrange"
+                android:textSize="@dimen/sp_22"
+                android:visibility="gone"
+                android:fontFamily="@font/lato_regular"/>
+
+            <ImageView
+                android:id="@+id/img_add_spare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/img_plus" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_20"
+    android:padding="@dimen/dp_10"
+    android:background="@drawable/img_grey_bg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:src="@drawable/img_network_error" />
+
+    <android.support.v7.widget.AppCompatTextView
+        style="@style/commonDialogText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:gravity="center"
+        android:text="@string/dialog_internet_msg_error"
+        android:fontFamily="@font/lato_regular"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_net_error"
+        style="@style/commonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_15"
+        android:paddingLeft="@dimen/dp_80"
+        android:paddingRight="@dimen/dp_80"
+        android:text="@string/btn_ok" />
+</LinearLayout>

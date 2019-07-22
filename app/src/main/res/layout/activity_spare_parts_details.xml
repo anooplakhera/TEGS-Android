@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.tegs.model.Datum" />
+
+        <import type="com.tegs.utils.Utils" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appBackgroundColor"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:elevation="@dimen/dp_4"
+                app:cardCornerRadius="@dimen/dp_5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_12">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/view_Pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_200"
+                        android:layout_marginBottom="@dimen/dp_25" />
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txt_title"
+                        style="@style/recyclerTextViewTitle"
+                        android:layout_width="match_parent"
+                        android:paddingRight="@dimen/dp_5"
+                        android:layout_height="wrap_content"
+                        android:text="@{data.modalName}" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txt_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/dp_5"
+                        android:text="@{Utils.convertDateFormat(`yyyy-MM-dd HH:mm:ss`,`dd MMMM yyyy`,data.createdAt)}"
+                        android:fontFamily="@font/lato_regular"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="@{data.make}"
+                        android:paddingRight="@dimen/dp_5"
+                        android:textColor="@color/colorOrange"
+                        android:fontFamily="@font/lato_regular"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:lineSpacingExtra="@dimen/dp_2"
+                        android:text="@{data.message}"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginBottom="@dimen/dp_15"
+                        android:paddingRight="@dimen/dp_5"
+                        android:fontFamily="@font/lato_regular"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </ScrollView>
+    </LinearLayout>
+</layout>

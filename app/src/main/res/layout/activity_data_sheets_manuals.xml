@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/appBackgroundColor">
+
+        <include layout="@layout/common_toolbar" />
+
+        <include layout="@layout/common_search_bar" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recView_data_sheets_manuals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5" />
+    </LinearLayout>
+</layout>

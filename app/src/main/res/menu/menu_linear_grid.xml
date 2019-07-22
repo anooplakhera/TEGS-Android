@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<item-->
+        <!--android:id="@+id/menu_linearView"-->
+        <!--android:icon="@drawable/img_linear_view"-->
+        <!--android:title="@string/linearview"-->
+        <!--android:visible="false"-->
+        <!--app:showAsAction="always" />-->
+    <!--<item-->
+        <!--android:id="@+id/menu_gridView"-->
+        <!--android:icon="@drawable/img_grid_view"-->
+        <!--android:title="@string/gridview"-->
+        <!--app:showAsAction="always" />-->
+    <item
+        android:id="@+id/menu_filter"
+        android:icon="@drawable/img_filter"
+        android:title="@string/filter"
+        app:showAsAction="always" />
+</menu>

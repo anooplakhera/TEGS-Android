@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#de7320</color>
+    <color name="colorPrimaryDark">#e16b09</color>
+    <color name="colorAccent">#312f2f</color>
+
+    <color name="colorRed">#FF2222</color>
+    <color name="colorOrange">#de7320</color>
+    <color name="colorDarkBrown">#312f2f</color>
+    <color name="colorAccentEffect">#ea8638</color>
+    <color name="colorAppGray">#4a4a4a</color>
+    <color name="colorLightGray">#d1d4e2</color>
+    <color name="colorLightBlack">#302e2f</color>
+    <color name="colorBlack">#000</color>
+    <color name="color_d0d0d5">#d0d0d5</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorDialogBtnGray">#91939c</color>
+    <color name="colorDivider">#afb1bb</color>
+    <color name="colorSlideGrey">#f3f3f3</color>
+    <color name="color_e7e7e7">#e7e7e7</color>
+    <color name="color_4a4a4a">#4a4a4a</color>
+    <color name="colorTabText">#ccc</color>
+    <color name="colorHeaders">#bcbfd3</color>
+    <color name="colorEditTextHint">#373537</color>
+    <color name="colorOffWhite">#f3f3f3</color>
+    <color name="colorTextView">#434244</color>
+    <color name="colorTransparent">#00F0F8FF</color>
+    <color name="colorDateLightGrey">#aaa8aa</color>
+    <color name="colorRecyclerContent">#302e2f</color>
+    <color name="color_32363b">#32363b</color>
+    <color name="color_848484">#848484</color>
+    <color name="color_ques_answer">#a2a2a2</color>
+    <color name="ques_divider_color">#e0e0e0</color>
+    <color name="appBackgroundColor">#EBEDF3</color>
+</resources>

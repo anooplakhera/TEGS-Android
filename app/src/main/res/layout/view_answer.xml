@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--Answer Type A6 and A3 For CheckBox and CheckBox With Image-->
+    <LinearLayout
+        android:id="@+id/lnr_checkboxWithImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_7"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/lnr_checkboxImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:orientation="vertical"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/lnr_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/lato_regular"
+            android:orientation="vertical"
+            android:visibility="visible" />
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:visibility="gone"></android.support.v7.widget.RecyclerView>
+
+
+    <!--Answer Type A1 and A2 For RadioButton and RadioButton With Image-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lnr_radioWithImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_7"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lnr_radio_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/lnr_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:orientation="vertical" />
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_text_radio_msg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_70"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/rounded_corner_white_grey_stroke"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="top"
+            android:hint="@string/type_your_answer"
+            android:padding="@dimen/dp_15"
+            android:textSize="@dimen/sp_15"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!--Answer Type A9 For TextArea having response of user-->
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_text_msg_ques"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/rounded_corner_white_grey_stroke"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="top"
+        android:hint="@string/type_your_answer"
+        android:padding="@dimen/dp_15"
+        android:textSize="@dimen/sp_15"
+        android:visibility="gone" />
+</LinearLayout>

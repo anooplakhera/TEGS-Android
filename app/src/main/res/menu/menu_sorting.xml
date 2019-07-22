@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_sorting_ascending"
+        android:icon="@drawable/img_sorting_1"
+        android:title="@string/menu_sorting"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/menu_sorting_descending"
+        android:icon="@drawable/img_sorting_2"
+        android:title="@string/menu_sorting"
+        android:visible="false"
+        app:showAsAction="always|collapseActionView" />
+</menu>

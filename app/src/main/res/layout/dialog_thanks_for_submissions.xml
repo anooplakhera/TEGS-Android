@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dp_20"
+        android:background="@drawable/img_grey_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_20">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/thanks"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/sp_35"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center"
+            android:text="@string/for_your_submission"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_5"
+            android:padding="@dimen/dp_14"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_tick_image" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center"
+            android:text="@string/thanks_caption"
+            android:textColor="@color/colorDarkBrown" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_thanks_ok"
+            style="@style/commonButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_20"
+            android:paddingLeft="@dimen/dp_80"
+            android:paddingRight="@dimen/dp_80"
+            android:text="@string/btn_ok" />
+    </LinearLayout>
+</layout>

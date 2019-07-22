@@ -1,0 +1,181 @@
+<resources>
+    <string name="app_name">TEGS</string>
+    <string name="add_info">Please add your information in settings before using this section, so we can contact you about the quote or question</string>
+
+    <!--LOGIN-->
+    <string name="lets_start">Lets get started</string>
+    <string name="dont_have_acc">Don\'t have an account? ""</string>
+    <string name="remember_me">Remember me</string>
+    <string name="login_forgot_password">Forgot Password? ""</string>
+
+    <!--SIGN UP-->
+    <string name="sign_up">Sign Up</string>
+    <string name="company_name">Company Name</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="email_id">Email ID</string>
+    <string name="password">Password</string>
+
+    <!--FORGOT PASSWORD-->
+    <string name="forgot_password">Forgot Password</string>
+
+    <!--Home-->
+    <string name="easy_automation">Easy Automation Quotes</string>
+    <string name="spare_parts">Spare Part Quotes</string>
+    <string name="data_sheets">Data Sheets &amp; Manuals </string>
+    <string name="brochures">Brochures</string>
+    <string name="video_photo_gallery">Video &amp; Photo Gallery</string>
+    <string name="instant_msg">Instant Message</string>
+
+    <!--Settings-->
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="acme_gate_installer">Acme Gate Installers</string>
+    <string name="name">Name</string>
+    <string name="dummy_name">John Smith</string>
+    <string name="branton_lane">Branton Lane</string>
+    <string name="dummy_mobile_number">079 65432132</string>
+    <string name="telephone_no">Telephone Number</string>
+    <string name="dummy_telephone_number">9876543210</string>
+    <string name="email_address">Email Address</string>
+    <string name="dummy_email">john@gmail.com</string>
+    <string name="GDPR"><h1>GDPR Message </h1>\n "'The information provided will only be used to assist us in sending you accurate quotations'</string>
+
+    <!--New Quote-->
+    <string name="title_new_quote">New Quote</string>
+    <string name="date">Date</string>
+    <string name="dummy_date">28th November 2017</string>
+    <string name="quote_title">Quote Title</string>
+    <string name="dummy_quote_title">Mrs Johns: Malton Road</string>
+    <string name="add_image">ADD IMAGE</string>
+    <string name="quote_details">Quote Details</string>
+    <string name="nov_2017">28th Nov 2017</string>
+
+    <!--Installation Quotes-->
+    <string name="title_installation_quotes">Installation Quotes</string>
+    <string name="edit_quote">Edit Quote</string>
+
+    <!--Title for Toolbar Icons-->
+    <string name="menu_sorting">Sorting</string>
+
+    <!--Search Bar-->
+    <string name="search_by_name">Search by name…</string>
+    <string name="search_by_date">Search by date…</string>
+
+    <!--Spare Part Quotes-->
+    <string name="create_spare_part">Create Spare Part Quotes</string>
+    <string name="lock_realese_lever">Lock Realese Lever</string>
+    <string name="roger_tech">Roger Technology</string>
+    <string name="dummy_address">BR21/362 Electromechnical actuator BRUSHLESS,</string>
+    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</string>
+    <string name="make">Make</string>
+    <string name="model_name">Model Name</string>
+    <string name="type_your_msg">Type your message…</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
+
+    <!--All Dialog Text-->
+
+    <!--Filter-->
+    <string name="filter">Filter</string>
+    <string name="gridview">Grid View</string>
+    <string name="linearview">Linear View</string>
+    <string name="swing_gate">Swing Gate</string>
+    <string name="sliding_gate">Sliding Gate</string>
+    <string name="parking_barrier">Parking Barrier</string>
+    <string name="accessories">Accessories</string>
+
+    <!--Dialog for internet connection's-->
+    <string name="dialog_internet_msg_error">You are Offline, your quotation \nwill be sent once you have the \ninternet connection</string>
+
+    <!--Instant messages-->
+    <string name="dialog_instant_msg">INSTANT MESSAGE</string>
+    <string name="subject">Subject</string>
+    <string name="message">Message</string>
+    <string name="safety_features">Safety features</string>
+    <string name="dummy_instant_msg">The following video is designed to easily explain the safety features and requirements of The electric Gate shop single…</string>
+    <string name="the_electric_gate_shop">The Electric Gate Shop…</string>
+    <string name="single_gate_design">Single Gate Design</string>
+    <string name="lifting_safety">Lifting Safety</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="no_ans_found">No Answer Found</string>
+
+    <!--Change Password-->
+    <string name="change_password">Change Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <!--Thanks for submission Dialog-->
+    <string name="thanks">THANKS</string>
+    <string name="for_your_submission">for your submission</string>
+    <string name="thanks_caption">We will be in contact with you shortly\n with your full quotation.</string>
+
+    <!--Button Text-->
+    <string name="btn_ok">OK</string>
+    <string name="btn_send">SEND</string>
+    <string name="btn_cancel">CANCEL</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="btn_update">Update</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_next">NEXT</string>
+    <string name="btn_submit">SUBMIT</string>
+    <string name="btn_save">SAVE</string>
+    <string name="btn_sent">SENT</string>
+    <string name="btn_delete">DELETE</string>
+    <string name="btn_pending">PENDING</string>
+    <string name="btn_yes">Yes</string>
+    <string name="btn_no">No</string>
+
+    <!--Video and Gallery-->
+    <string name="video">Videos</string>
+    <string name="gallery">Gallery</string>
+    <string name="dummy_link">https://www.youtube.com/watch?v=rKaZw6KAnhu</string>
+
+    <string name="logout_content">Are you sure you want to logout \n from the application?</string>
+    <string name="loading">Loading…</string>
+
+    <!--Edit Question and Answer -->
+    <string name="answer">Answer</string>
+    <string name="question">Question: %1$d</string>
+
+    <!--VALIDATIONS AND ALERTS-->
+    <string name="err_emailID">Please enter email id</string>
+    <string name="err_correct_email">Please enter valid Email id</string>
+    <string name="err_password">Please enter password</string>
+    <string name="err_match_password">New Password and Confirm Password must be same.</string>
+    <string name="err_name">Please enter name</string>
+    <string name="err_phone">Please enter mobile number</string>
+    <string name="err_date">Please select date</string>
+    <string name="err_quote_title">Please enter Quote Title</string>
+    <string name="err_internet">Check Your Internet Connection</string>
+    <string name="err_password_change">Your current password is incorrect.</string>
+    <string name="err_subject">Please enter subject</string>
+    <string name="err_message">Please enter message</string>
+    <string name="err_maker_name">Please enter maker name</string>
+    <string name="err_modal_name">Please enter model name</string>
+    <string name="err_image">Please Upload atleast one image</string>
+    <string name="err_the_email_has_already_been_taken">The email has already been taken.</string>
+
+    <string name="invalid_email">Invalid Email</string>
+    <string name="invalid_wrong_email_password">Invalid EmailID or Password</string>
+
+    <string name="success_forgot_pass">Password reset link is sent to your registered email address. Use the link to reset your password.</string>
+    <string name="success_response">onResponse</string>
+    <string name="success_result">onSuccess</string>
+    <string name="success_password_change">Your password changed successfully!</string>
+    <string name="success_profile_update">Your Profile updated successfully!</string>
+    <string name="success_msg">Instant Message saved successfully.</string>
+    <string name="success_logout">User Logged Out Successfully</string>
+    <string name="success_create_spare_parts">Spare Part Quote created successfully.</string>
+    <string name="edit_spare_part">Edit Spare Part Quotes</string>
+
+
+    <string name="questions">Question-</string>
+    <string name="type_your_answer">Type your answer…</string>
+    <string name="err_please_type_msg">Please type some message</string>
+    <string name="err_this_is_required_question">Please select atleast an one option</string>
+    <string name="ques_ans_submitted_success">Submitted Successfully!</string>
+    <string name="successfully_updated">Successfully Updated!</string>
+    <string name="share_video">Share Video</string>
+
+</resources>
