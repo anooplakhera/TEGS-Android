@@ -23,6 +23,7 @@ import com.tegs.adapters.InstallationQuotesAdapter;
 import com.tegs.base.BaseActivity;
 import com.tegs.databinding.ActivityInstallationQuotesBinding;
 import com.tegs.model.GetInstallationQuotesData;
+import com.tegs.model.GetLoginResponse;
 import com.tegs.model.SetAnswers;
 import com.tegs.retrofit.ApiResponseListener;
 import com.tegs.retrofit.RequestParameters;
@@ -36,6 +37,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -61,6 +63,12 @@ public class InstallationQuotesActivity extends BaseActivity implements View.OnC
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         myCalendar = Calendar.getInstance();
         binding = DataBindingUtil.setContentView(this, R.layout.activity_installation_quotes);
         //Fetching Pending List
@@ -181,6 +189,7 @@ public class InstallationQuotesActivity extends BaseActivity implements View.OnC
 
     private void setPendingData() {
         Utils.dismissDialog();
+
         //During no internet connection Add all local data in list
         installationQuotesAdapter.addList(pendingDataList);
 
@@ -218,13 +227,13 @@ public class InstallationQuotesActivity extends BaseActivity implements View.OnC
             }
 
             @Override
-            public void onButtonClick(int rowID) {
+            public void onButtonClick(int rowID, int pos) {
                 Utils.showProgressDialog(InstallationQuotesActivity.this);
                 if (Utils.isConnected(InstallationQuotesActivity.this)) {
                     Utils.dismissDialog();
                     //Fetching particular row from db and set into API .
                     SetAnswerEntity answerList = DBSetAnsMethodSync.fetchAt(AppDatabase.getAppDatabase(InstallationQuotesActivity.this), rowID);
-                    setPendingAnsToSubmit(answerList, rowID);
+                    setPendingAnsToSubmit(answerList, rowID, String.valueOf(pos));
 
                 } else {
                     Utils.dismissDialog();
@@ -293,13 +302,13 @@ public class InstallationQuotesActivity extends BaseActivity implements View.OnC
 
                             //This method is for thoses who's status is pending and user want's to submit it if having an internet connection
                             @Override
-                            public void onButtonClick(int rowID) {
+                            public void onButtonClick(int rowID, int pos) {
                                 Utils.showProgressDialog(InstallationQuotesActivity.this);
                                 if (Utils.isConnected(InstallationQuotesActivity.this)) {
                                     Utils.dismissDialog();
                                     //Fetching particular row from db and set into API .
                                     SetAnswerEntity answerList = DBSetAnsMethodSync.fetchAt(AppDatabase.getAppDatabase(InstallationQuotesActivity.this), rowID);
-                                    setPendingAnsToSubmit(answerList, rowID);
+                                    setPendingAnsToSubmit(answerList, rowID, String.valueOf(pos));
                                 } else {
                                     Utils.dismissDialog();
                                     Utils.showSnackBar(InstallationQuotesActivity.this, getString(R.string.err_internet));
@@ -312,7 +321,8 @@ public class InstallationQuotesActivity extends BaseActivity implements View.OnC
                     //Check if same user is login on another device
                     if (result.getStatus() == RequestParameters.STATUS_403) {
                         Utils.dismissDialog();
-                        Utils.logout(InstallationQuotesActivity.this);
+                        callLoginWS();
+//                        Utils.logout(InstallationQuotesActivity.this);
                     }
                     //Check if data is null (Answer's List)
                     if (installationQuotesAdapter.getItemCount() > 0) {
@@ -335,8 +345,46 @@ public class InstallationQuotesActivity extends BaseActivity implements View.OnC
         });
     }
 
+    private void callLoginWS() {
+        final Utils utils = new Utils(this);
+        /*
+         Parameters
+        */
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put(RequestParameters.EMAIL, utils.getEmail());
+        hashMap.put(RequestParameters.PASSWORD, utils.getPassword());
+        hashMap.put(RequestParameters.DEVICE_TYPE, RequestParameters.DEVICE_TYPE_VALUE);
+        hashMap.put(RequestParameters.DEVICE_TOKEN, RequestParameters.DEVICE_TOKEN_VALUE);
+
+        Call<GetLoginResponse> call = RestClient.getInstance().getApiInterface().callLoginWS(Utils.getRequestMap(false), Utils.getJSONRequestBody(hashMap));
+        Utils.showProgressDialog(this);
+        RestClient.makeApiRequest(InstallationQuotesActivity.this, call, true, new ApiResponseListener() {
+            @Override
+            public void onApiResponse(Call<Object> call, Object response) {
+                AppLog.d("TAG", getString(R.string.success_response));
+                Utils.dismissDialog();
+                GetLoginResponse result = (GetLoginResponse) response;
+                if (result != null) {
+                    if (result.getStatus() == RequestParameters.STATUS) {
+                        AppLog.d("TAG", getString(R.string.success_result));
+                        utils.setPrefAuthToken(result.getData().getUserToken());
+                        callGetAnswersList();
+                    }
+                }
+            }
+
+            @Override
+            public void onApiError(Call<Object> call, Throwable throwable) {
+                Utils.dismissDialog();
+                AppLog.e("TAG", "onError");
+                Utils.showSnackBar(InstallationQuotesActivity.this, getString(R.string.invalid_wrong_email_password));
+            }
+        });
+    }
+
+
     //Call this webservice when user clicks on pending button and internet is connected then this is to send answers
-    private void setPendingAnsToSubmit(SetAnswerEntity pendingAnswer, final int rowID) {
+    private void setPendingAnsToSubmit(SetAnswerEntity pendingAnswer, final int rowID, final String pos) {
         Utils.showProgressDialog(InstallationQuotesActivity.this);
         String answerJSON = new Gson().toJson(pendingAnswer.getAnswers());
         Call<SetAnswers> call = RestClient.getInstance(true).getApiInterface().SetAnswersListWS(Utils.getRequestMap(true), pendingAnswer.getDate(), pendingAnswer.getTitle(), answerJSON);
@@ -349,9 +397,12 @@ public class InstallationQuotesActivity extends BaseActivity implements View.OnC
                 if (result.getStatus() == RequestParameters.STATUS) {
                     AppLog.d(TAG, getString(R.string.success_result));
                     DBSetAnsMethodSync.deleteDataAt(AppDatabase.getAppDatabase(InstallationQuotesActivity.this), rowID);
+                    pendingDataList.clear();
                     Utils.showSnackBar(InstallationQuotesActivity.this, getString(R.string.ques_ans_submitted_success));
                     installationQuotesAdapter.clearList();
+                    pendingDataList = DBSetAnsMethodSync.fetchData(AppDatabase.getAppDatabase(InstallationQuotesActivity.this));
                     callGetAnswersList();
+
                 } else {
                     Utils.dismissDialog();
                     AppLog.d(TAG, "onError");
@@ -424,14 +475,13 @@ public class InstallationQuotesActivity extends BaseActivity implements View.OnC
             }
 
             @Override
-            public void onButtonClick(int rowID) {
+            public void onButtonClick(int rowID, int pos) {
                 Utils.showProgressDialog(InstallationQuotesActivity.this);
                 if (Utils.isConnected(InstallationQuotesActivity.this)) {
                     Utils.dismissDialog();
                     //Fetching particular row from db and set into API .
                     SetAnswerEntity answerList = DBSetAnsMethodSync.fetchAt(AppDatabase.getAppDatabase(InstallationQuotesActivity.this), rowID);
-                    setPendingAnsToSubmit(answerList, rowID);
-
+                    setPendingAnsToSubmit(answerList, rowID, String.valueOf(pos));
                 } else {
                     Utils.dismissDialog();
                     Utils.showSnackBar(InstallationQuotesActivity.this, getString(R.string.err_internet));

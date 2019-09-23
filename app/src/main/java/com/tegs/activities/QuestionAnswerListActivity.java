@@ -56,12 +56,15 @@ public class QuestionAnswerListActivity extends BaseActivity implements View.OnC
         Setting Toolbar
          */
         initToolbar(this);
+        imgExit.setVisibility(View.VISIBLE);
+
 
         setToolbarTitle(questionsModel.getData().get(0).getQuestions().getTitle());
         binding.viewpager.setAdapter(pagerAdapter);
         binding.viewpager.addOnPageChangeListener(onPageChangeListener);
         int viewPagerCurrentItem = binding.viewpager.getCurrentItem();
         AppLog.d("ViewPagerCurrentItem", String.valueOf(viewPagerCurrentItem));
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

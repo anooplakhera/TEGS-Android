@@ -217,10 +217,15 @@ public class VideoFragment extends Fragment {
         if (category != null) {
             GetVideosData brochuresData = new Gson().fromJson(jsonArray, GetVideosData.class);
             List<VideoChildDataList> pdfChildDataList = brochuresData.getData();
-
-            for (VideoChildDataList s : pdfChildDataList) {
-                if (s.getCatetory().equals(category)) {
+            if (category.equals("Everything")) {
+                for (VideoChildDataList s : pdfChildDataList) {
                     setFilterList.add(s);
+                }
+            } else {
+                for (VideoChildDataList s : pdfChildDataList) {
+                    if (s.getCatetory().equals(category)) {
+                        setFilterList.add(s);
+                    }
                 }
             }
         }

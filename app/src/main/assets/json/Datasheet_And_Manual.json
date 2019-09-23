@@ -24,7 +24,7 @@
       "addr": "",
       "desc": "Roger Brushless high speed BE20/200 twin gate kit for gates up to 2.2m per wing, 24v, super intensive use, with digital encoder.",
       "doc": "Roger Brushless BE20_200 High Speed Data Sheet",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -33,7 +33,7 @@
       "addr": "",
       "desc": "Roger Brushless BE20/210 twin gate kit for gates up to 2.2m per wing, 24v, super intensive use, with digital encoder.",
       "doc": "Roger Brushless BE20210 Data Sheet",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -42,7 +42,7 @@
       "addr": "",
       "desc": "Roger Technology 1000kg high speed BG30 1004 sliding gate kit featuring the latest brushless motor technology and safety.",
       "doc": "Roger Brushless BG30 1004 High Speed Data Sheet",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -51,7 +51,7 @@
       "addr": "",
       "desc": "Roger Technology heavy duty 1600kg BG30 1604 sliding gate kit featuring the latest brushless motor technology and safety.",
       "doc": "Roger Brushless BG30 1604 Data Sheet",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -60,7 +60,7 @@
       "addr": "",
       "desc": "Roger Technology heavy duty 2200kg BG30 2204 sliding gate kit featuring the latest brushless motor technology and safety.",
       "doc": "Roger Brushless BG30 2204 Data Sheet",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -69,7 +69,7 @@
       "addr": "",
       "desc": "Roger Brushless BH23/284 articulated twin gate kit for gates up to 2.8m per wing, 24v, super intensive use, with digital encoder.",
       "doc": "Roger Brushless BH23 284 Data Sheet",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -78,7 +78,7 @@
       "addr": "",
       "desc": "Roger Technology 500kg high speed BH30 504 sliding gate kit featuring the latest brushless motor technology and safety.  ",
       "doc": "Roger Brushless BH30 504 HS Data Sheet",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -87,7 +87,7 @@
       "addr": "",
       "desc": "Roger Technology 600kg BH30 603 sliding gate kit featuring the latest brushless motor technology and safety.",
       "doc": "Roger Brushless BH30 603 Data Sheet",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -96,7 +96,7 @@
       "addr": "",
       "desc": "Roger Technology 1000kg BH30 803 sliding gate kit featuring the latest brushless motor technology and safety.",
       "doc": "Roger Brushless BH30 803 Data Sheet",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -105,7 +105,7 @@
       "addr": "",
       "desc": "Roger Technology 400kg high speed BH30 304 sliding gate kit featuring the latest brushless motor technology and safety.",
       "doc": "Roger Brushless BM30 304 High Speed Data Sheet",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -114,7 +114,7 @@
       "addr": "",
       "desc": "Roger Brushless high speed BR20/500 twin gate kit for gates up to 3.5m per wing, 24v, super intensive use, with digital encoder. ",
       "doc": "Roger Brushless BR20 500 Data Sheet",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -123,7 +123,7 @@
       "addr": "",
       "desc": "Roger Brushless BR21/362 underground gate kit for gates up to 4m per wing, 24v, super intensive use, with digital encoder. ",
       "doc": "Roger Brushless BR21 362 Data Sheet",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -132,7 +132,7 @@
       "addr": "",
       "desc": "The Roger Brushless high speed SMARTY above ground kit capable of opening a 7m gate leaf, uper intensive use, with digital encoder.",
       "doc": "Roger Brushless SMARTY 4 High Speed Data Sheet",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -141,7 +141,7 @@
       "addr": "",
       "desc": "The Roger Brushless SMARTY 5 above ground kit capable of opening a 5m gate leaf, uper intensive use, with digital encoder.",
       "doc": "Roger Brushless SMARTY 5 Data Sheet",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "datasheet"
     },
     {
@@ -268,7 +268,7 @@
       "addr": "",
       "desc": "The Brushless Bionik 36V DC super intensive barrier has a boom of up to 4 metres and a built-in digital control panel with on board encoder.",
       "doc": "Roger Brushless Bionik Barrier CTRL Manual",
-      "catetory": "Barrrier Gate Motors",
+      "catetory": "Motors",
       "type": "manuals"
     },
     {
@@ -277,7 +277,7 @@
       "addr": "",
       "desc": "Roger Brushless high speed BE20/200 twin gate kit for gates up to 2.2m per wing, 24v, super intensive use, with digital encoder. ",
       "doc": "Roger Brushless BE20 High Speed Manual",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "manuals"
     },
     {
@@ -286,7 +286,7 @@
       "addr": "",
       "desc": "Roger Technology BG30 heavy duty sliding gate kit series featuring the latest brushless motor technology and safety.",
       "doc": "Roger Brushless BG30 Series Manual",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "manuals"
     },
     {
@@ -295,7 +295,7 @@
       "addr": "",
       "desc": "Roger Brushless BH23/284 articulated twin gate kit for gates up to 2.8m per wing, 24v, super intensive use, with digital encoder. ",
       "doc": "Roger Brushless BH23 284 Manual",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "manuals"
     },
     {
@@ -304,7 +304,7 @@
       "addr": "",
       "desc": "Roger Technology 1000kg BH30 803 sliding gate kit featuring the latest brushless motor technology and safety.",
       "doc": "Roger Brushless BH30 803 Manual",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "manuals"
     },
     {
@@ -313,7 +313,7 @@
       "addr": "",
       "desc": "Roger Technology 400kg high speed BH30 304 sliding gate kit featuring the latest brushless motor technology and safety.",
       "doc": "Roger Brushless BM30 304 High Speed Manual",
-      "catetory": "Sliding Gate Motors",
+      "catetory": "Motors",
       "type": "manuals"
     },
     {
@@ -322,7 +322,7 @@
       "addr": "",
       "desc": "Roger Brushless high speed BR20/500 twin gate kit for gates up to 3.5m per wing, 24v, super intensive use, with digital encoder. ",
       "doc": "Roger Brushless BR20 500 Manual",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "manuals"
     },
     {
@@ -331,7 +331,7 @@
       "addr": "",
       "desc": "Roger Brushless BR21/362 underground gate kit for gates up to 4m per wing, 24v, super intensive use, with digital encoder. ",
       "doc": "Roger Brushless BR21 362 Manual",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "manuals"
     },
     {
@@ -340,7 +340,7 @@
       "addr": "",
       "desc": "The Roger Brushless high speed SMARTY above ground kit capable of opening a 7m gate leaf, uper intensive use, with digital encoders",
       "doc": "Roger Brushless SMARTY 4 High Speed Manual",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "manuals"
     },
     {
@@ -349,7 +349,7 @@
       "addr": "",
       "desc": "The Roger Brushless SMARTY above ground kit capable of opening a 7m gate leaf, uper intensive use, with digital encoder.",
       "doc": "Roger Brushless SMARTY Series Manual",
-      "catetory": "Swing Gate Motors",
+      "catetory": "Motors",
       "type": "manuals"
     },
     {

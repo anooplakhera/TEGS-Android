@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,7 +21,6 @@ import com.tegs.R;
 import com.tegs.activities.SpareDetailsActivity;
 import com.tegs.utils.Utils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,10 +33,12 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public Toolbar toolbar;
     private TextView txtToolbarTitle;
     private String selectedFilterText = "abc";
+    public ImageView imgExit;
 
     public void initToolbar(final Activity activity) {
         toolbar = findViewById(R.id.toolbar);//Toolbar
         txtToolbarTitle = findViewById(R.id.txt_toolbar_title); //Toolbar Title
+        imgExit = findViewById(R.id.imgExit); //Toolbar Title
         toolbar.inflateMenu(R.menu.menu_edit);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -49,8 +51,14 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
                 onBackPressed();
             }
         });
-    }
+        imgExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
+    }
 
 
     public void setToolMenu(int menu, final Activity activtiy) {
@@ -115,6 +123,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public interface onTextClickView {
         void onTextClickView(String catName);
     }
+
 
     @Override
     public void onClick(View v) {

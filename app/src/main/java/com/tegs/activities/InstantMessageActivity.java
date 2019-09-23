@@ -25,6 +25,7 @@ import com.tegs.databinding.DialogInstantMessageBinding;
 import com.tegs.model.CreateInstantMsgResponse;
 import com.tegs.model.GetInstantMessageResponse.Datum;
 import com.tegs.model.GetInstantMessageResponse;
+import com.tegs.model.GetLoginResponse;
 import com.tegs.retrofit.ApiResponseListener;
 import com.tegs.retrofit.RequestParameters;
 import com.tegs.retrofit.RestClient;
@@ -132,7 +133,8 @@ public class InstantMessageActivity extends BaseActivity implements View.OnClick
                     instantMessageAdapter.addList(result.getData().children);
                 }
                 if (result.getStatus() == RequestParameters.STATUS_403) {
-                    utils.logout(InstantMessageActivity.this);
+//                    utils.logout(InstantMessageActivity.this);
+                    callLoginWS();
                 }
                 if (instantMessageAdapter.getItemCount() > 0) {
                     binding.txtEmptyView.setVisibility(View.GONE);
@@ -148,6 +150,44 @@ public class InstantMessageActivity extends BaseActivity implements View.OnClick
             }
         });
     }
+
+    private void callLoginWS() {
+        final Utils utils = new Utils(this);
+        /*
+         Parameters
+        */
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put(RequestParameters.EMAIL, utils.getEmail());
+        hashMap.put(RequestParameters.PASSWORD, utils.getPassword());
+        hashMap.put(RequestParameters.DEVICE_TYPE, RequestParameters.DEVICE_TYPE_VALUE);
+        hashMap.put(RequestParameters.DEVICE_TOKEN, RequestParameters.DEVICE_TOKEN_VALUE);
+
+        Call<GetLoginResponse> call = RestClient.getInstance().getApiInterface().callLoginWS(Utils.getRequestMap(false), Utils.getJSONRequestBody(hashMap));
+        Utils.showProgressDialog(this);
+        RestClient.makeApiRequest(InstantMessageActivity.this, call, true, new ApiResponseListener() {
+            @Override
+            public void onApiResponse(Call<Object> call, Object response) {
+                AppLog.d("TAG", getString(R.string.success_response));
+                Utils.dismissDialog();
+                GetLoginResponse result = (GetLoginResponse) response;
+                if (result != null) {
+                    if (result.getStatus() == RequestParameters.STATUS) {
+                        AppLog.d("TAG", getString(R.string.success_result));
+                        utils.setPrefAuthToken(result.getData().getUserToken());
+                        callGetInstantMsgList();
+                    }
+                }
+            }
+
+            @Override
+            public void onApiError(Call<Object> call, Throwable throwable) {
+                Utils.dismissDialog();
+                AppLog.e("TAG", "onError");
+                Utils.showSnackBar(InstantMessageActivity.this, getString(R.string.invalid_wrong_email_password));
+            }
+        });
+    }
+
 
     /*
     Instant Message Dialog

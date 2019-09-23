@@ -8,7 +8,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -22,6 +21,7 @@ import com.tegs.R;
 import com.tegs.adapters.SparePartQuotesAdapter;
 import com.tegs.base.BaseActivity;
 import com.tegs.databinding.ActivitySparePartQuotesBinding;
+import com.tegs.model.GetLoginResponse;
 import com.tegs.model.GetSparePartListResponse;
 import com.tegs.model.GetSparePartListResponse.Datum;
 import com.tegs.retrofit.ApiResponseListener;
@@ -33,10 +33,9 @@ import com.tegs.utils.EndlessScrollListener;
 import com.tegs.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 
 /**
@@ -174,7 +173,7 @@ public class SparePartQuotesActivity extends BaseActivity implements View.OnClic
 
     private void callSpareListWS() {
         Utils.showProgressDialog(this);
-        Call<GetSparePartListResponse> call = RestClient.getInstance(true).getApiInterface().callSpareListResponse(Utils.getRequestMap(true),searchElement, currentPage);
+        Call<GetSparePartListResponse> call = RestClient.getInstance(true).getApiInterface().callSpareListResponse(Utils.getRequestMap(true), searchElement, currentPage);
         RestClient.makeApiRequest(this, call, true, new ApiResponseListener() {
             @Override
             public void onApiResponse(Call<Object> call, Object response) {
@@ -196,7 +195,8 @@ public class SparePartQuotesActivity extends BaseActivity implements View.OnClic
                     }
                     if (result.getStatus() == RequestParameters.STATUS_403) {
                         Utils.dismissDialog();
-                        utils.logout(SparePartQuotesActivity.this);
+                        callLoginWS("");
+//                        utils.logout(SparePartQuotesActivity.this);
                     }
                     if (sparePartQuotesAdapter.getItemCount() > 0) {
                         Utils.dismissDialog();
@@ -214,6 +214,44 @@ public class SparePartQuotesActivity extends BaseActivity implements View.OnClic
             public void onApiError(Call<Object> call, Throwable throwable) {
                 Utils.dismissDialog();
                 AppLog.d(TAG, throwable.toString());
+            }
+        });
+    }
+
+
+    private void callLoginWS(final String type) {
+        final Utils utils = new Utils(this);
+        /*
+         Parameters
+        */
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put(RequestParameters.EMAIL, utils.getEmail());
+        hashMap.put(RequestParameters.PASSWORD, utils.getPassword());
+        hashMap.put(RequestParameters.DEVICE_TYPE, RequestParameters.DEVICE_TYPE_VALUE);
+        hashMap.put(RequestParameters.DEVICE_TOKEN, RequestParameters.DEVICE_TOKEN_VALUE);
+
+        Call<GetLoginResponse> call = RestClient.getInstance().getApiInterface().callLoginWS(Utils.getRequestMap(false), Utils.getJSONRequestBody(hashMap));
+        Utils.showProgressDialog(this);
+        RestClient.makeApiRequest(SparePartQuotesActivity.this, call, true, new ApiResponseListener() {
+            @Override
+            public void onApiResponse(Call<Object> call, Object response) {
+                AppLog.d("TAG", getString(R.string.success_response));
+                Utils.dismissDialog();
+                GetLoginResponse result = (GetLoginResponse) response;
+                if (result != null) {
+                    if (result.getStatus() == RequestParameters.STATUS) {
+                        AppLog.d("TAG", getString(R.string.success_result));
+                        utils.setPrefAuthToken(result.getData().getUserToken());
+                        callSpareListWS();
+                    }
+                }
+            }
+
+            @Override
+            public void onApiError(Call<Object> call, Throwable throwable) {
+                Utils.dismissDialog();
+                AppLog.e("TAG", "onError");
+                Utils.showSnackBar(SparePartQuotesActivity.this, getString(R.string.invalid_wrong_email_password));
             }
         });
     }

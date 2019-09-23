@@ -8,21 +8,37 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:paddingLeft="@dimen/dp_20"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorAccent">
+            android:background="?attr/colorAccent"
+            android:paddingLeft="@dimen/dp_20">
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/txt_toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/lato_bold"
-                android:singleLine="true"
-                android:ellipsize="end"
-                android:textColor="@color/colorWhite"
-                android:layout_marginRight="@dimen/dp_10"
-                android:textSize="@dimen/sp_18" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txt_toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_50"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lato_bold"
+                    android:singleLine="true"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/sp_18" />
+
+                <ImageView
+                    android:id="@+id/imgExit"
+                    android:layout_width="@dimen/dp_18"
+                    android:layout_height="@dimen/dp_18"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_delete"
+                    android:visibility="gone"/>
+            </RelativeLayout>
         </android.support.v7.widget.Toolbar>
     </RelativeLayout>
 </layout>

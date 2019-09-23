@@ -52,6 +52,7 @@ import com.tegs.retrofit.RequestParameters;
 import com.tegs.retrofit.RestClient;
 import com.tegs.utils.AppLog;
 import com.tegs.utils.Constants;
+import com.tegs.utils.ResizableImageView;
 import com.tegs.utils.Utils;
 
 import retrofit2.Call;
@@ -116,13 +117,14 @@ public class QuestionAnswerFragment extends Fragment {
         itemView = inflater.inflate(R.layout.raw_question_answer, container, false);
         setAnswers = ((QuestionAnswerListActivity) getActivity()).setAnswers;
         setAnswerEntity = ((QuestionAnswerListActivity) getActivity()).setAnswerEntity;
-        setAnswerEntity.setStatus(getString(R.string.btn_pending));
+        setAnswerEntity.setStatus(getString(R.string.btn_pending_new));
 
         String quesInstruction = questionObject.getQuestions().getInstruction(); //for ques instruction if it has
         String quesInstructionImage = questionObject.getQuestions().getImage(); //for instruction img if it has
 
         final AppCompatTextView txtInstruction;
-        final SimpleDraweeView sdvInstructionImage;
+//        final SimpleDraweeView sdvInstructionImage;
+        final ResizableImageView sdvInstructionImage;
         final AppCompatButton btnNextQues;
         final LinearLayout lnrAddQues;
         final CardView cardViewInstImage;
@@ -296,61 +298,104 @@ public class QuestionAnswerFragment extends Fragment {
                 lnrAddQues.addView(ansView);
             }
 
-            /*
-            ANSWER TYPE-3 CheckBox with Images
+             /*
+              ANSWER TYPE-2 Image with RadioButton
             */
             else if (answerType.equals(answersType[3])) {
-                String checkBoxImage;
-
-                lnrCheckBox.setVisibility(View.VISIBLE);
-                lnrCheckBoxImage.setVisibility(View.VISIBLE);
+                String radioImage;
+                lnrRadio.setVisibility(View.VISIBLE);
                 recycleview.setVisibility(View.GONE);
-
-                for (int option = 0; option < optionSize; option++) {
-
-                    LinearLayout.LayoutParams checkBoxImageParam = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT);
-
-//                    View viewCardView = inflater.inflate(R.layout.view_card_view_image, lnrRadioImage, false);
-//                    final SimpleDraweeView sdvCheckBoxImage = viewCardView.findViewById(R.id.sdv_image);
-                    final SimpleDraweeView sdvCheckBoxImage = new SimpleDraweeView(getContext());
-                    final CardView cardView = new CardView(getActivity());
-                    cardView.setRadius(10f);
-                    sdvCheckBoxImage.setLayoutParams(checkBoxImageParam);
-                    cardView.setCardBackgroundColor(getResources().getColor(android.R.color.transparent));
-                    AppCompatCheckBox checkBoxView = (AppCompatCheckBox) inflater.inflate(R.layout.view_checkbox, lnrCheckBox, false);
-                    checkBoxView.setText(questionObject.getQuestions().getQuestions().get(ques).getOptions().get(option).getText());
-                    checkBoxImage = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(option).getImage();
-                    int resID = itemView.getResources().getIdentifier(getImage(checkBoxImage), "drawable", ((QuestionAnswerListActivity) getActivity()).getPackageName());
-                    sdvCheckBoxImage.setScaleType(ImageView.ScaleType.FIT_XY);
-                    sdvCheckBoxImage.setImageResource(resID);
-                    if (checkBoxImage.equals("")) {
-                        sdvCheckBoxImage.setVisibility(View.INVISIBLE);
+                lnrRadioImage.setVisibility(View.VISIBLE);
+                RadioGroup radioGroup = new RadioGroup(getActivity());
+                radioGroup.setTag(Constants.RADIO_GROUP_WITH_IMAGE + ques);
+                lnrRadio.addView(radioGroup);
+                for (int radioBtn = 0; radioBtn < optionSize; radioBtn++) {
+                    //Fetching the name of image
+                    radioImage = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(radioBtn).getImage();
+                    AppCompatRadioButton radioButton = (AppCompatRadioButton) inflater.inflate(R.layout.view_radio, radioGroup, false);
+                    View viewCardView = inflater.inflate(R.layout.view_card_view_image, lnrRadioImage, false);
+                    final SimpleDraweeView sdvRadioImage = viewCardView.findViewById(R.id.sdv_image);
+                    int resID = itemView.getResources().getIdentifier(getImage(radioImage), "drawable", ((QuestionAnswerListActivity) getActivity()).getPackageName());
+                    sdvRadioImage.setImageResource(resID);
+                    if (radioImage.equals("")) {
+                        viewCardView.setVisibility(View.INVISIBLE);
                     } else {
-                        sdvCheckBoxImage.setVisibility(View.VISIBLE);
+                        viewCardView.setVisibility(View.VISIBLE);
                     }
-                    checkBoxImageParam.setMargins(0, 7, 0, 7);
-                    checkBoxView.setTag(option);
-                    checkBoxView.setId(option);
-                    cardView.setLayoutParams(checkBoxImageParam);
-                    cardView.addView(sdvCheckBoxImage);
-                    checkBoxView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    radioButton.setText(questionObject.getQuestions().getQuestions().get(ques).getOptions().get(radioBtn).getText());
+                    radioButton.setId(radioBtn + 1);
+                    radioGroup.addView(radioButton);
+                    sdvRadioImage.setScaleType(ImageView.ScaleType.FIT_XY);
+                    radioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                         @Override
                         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                             if (isChecked) {
-                                sdvCheckBoxImage.setPadding(4, 4, 4, 4);
-                                cardView.setCardBackgroundColor(getResources().getColor(R.color.colorOrange));
+                                sdvRadioImage.setPadding(7, 7, 7, 7);
                             } else {
-                                sdvCheckBoxImage.setPadding(0, 0, 0, 0);
-                                cardView.setCardBackgroundColor(getResources().getColor(android.R.color.transparent));
+                                sdvRadioImage.setPadding(0, 0, 0, 0);
                             }
                         }
                     });
-                    lnrCheckBoxImage.addView(cardView);
-                    lnrCheckBox.addView(checkBoxView);
+                    lnrRadioImage.addView(viewCardView);
                 }
                 lnrAddQues.addView(ansView);
             }
+
+            /*
+            ANSWER TYPE-3 CheckBox with Images
+            */
+//            else if (answerType.equals(answersType[3])) {
+//                String checkBoxImage;
+//
+//                lnrCheckBox.setVisibility(View.VISIBLE);
+//                lnrCheckBoxImage.setVisibility(View.VISIBLE);
+//                recycleview.setVisibility(View.GONE);
+//
+//                for (int option = 0; option < optionSize; option++) {
+//
+//                    LinearLayout.LayoutParams checkBoxImageParam = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT);
+//
+////                    View viewCardView = inflater.inflate(R.layout.view_card_view_image, lnrRadioImage, false);
+////                    final SimpleDraweeView sdvCheckBoxImage = viewCardView.findViewById(R.id.sdv_image);
+//                    final SimpleDraweeView sdvCheckBoxImage = new SimpleDraweeView(getContext());
+//                    final CardView cardView = new CardView(getActivity());
+//                    cardView.setRadius(10f);
+//                    sdvCheckBoxImage.setLayoutParams(checkBoxImageParam);
+//                    cardView.setCardBackgroundColor(getResources().getColor(android.R.color.transparent));
+//                    AppCompatCheckBox checkBoxView = (AppCompatCheckBox) inflater.inflate(R.layout.view_checkbox, lnrCheckBox, false);
+//                    checkBoxView.setText(questionObject.getQuestions().getQuestions().get(ques).getOptions().get(option).getText());
+//                    checkBoxImage = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(option).getImage();
+//                    int resID = itemView.getResources().getIdentifier(getImage(checkBoxImage), "drawable", ((QuestionAnswerListActivity) getActivity()).getPackageName());
+//                    sdvCheckBoxImage.setScaleType(ImageView.ScaleType.FIT_XY);
+//                    sdvCheckBoxImage.setImageResource(resID);
+//                    if (checkBoxImage.equals("")) {
+//                        sdvCheckBoxImage.setVisibility(View.INVISIBLE);
+//                    } else {
+//                        sdvCheckBoxImage.setVisibility(View.VISIBLE);
+//                    }
+//                    checkBoxImageParam.setMargins(0, 7, 0, 7);
+//                    checkBoxView.setTag(option);
+//                    checkBoxView.setId(option);
+//                    cardView.setLayoutParams(checkBoxImageParam);
+//                    cardView.addView(sdvCheckBoxImage);
+//                    checkBoxView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//                        @Override
+//                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                            if (isChecked) {
+//                                sdvCheckBoxImage.setPadding(4, 4, 4, 4);
+//                                cardView.setCardBackgroundColor(getResources().getColor(R.color.colorOrange));
+//                            } else {
+//                                sdvCheckBoxImage.setPadding(0, 0, 0, 0);
+//                                cardView.setCardBackgroundColor(getResources().getColor(android.R.color.transparent));
+//                            }
+//                        }
+//                    });
+//                    lnrCheckBoxImage.addView(cardView);
+//                    lnrCheckBox.addView(checkBoxView);
+//                }
+//                lnrAddQues.addView(ansView);
+//            }
 
             /*
                ANSWER TYPE-4 Image with radio button with textbox
@@ -602,8 +647,13 @@ public class QuestionAnswerFragment extends Fragment {
                 InputFilter[] fArray = new InputFilter[1];
                 fArray[0] = new InputFilter.LengthFilter(maxLength);
                 if (questionObject.getQuestions().getQuestions().get(ques).getOptions().get(0).getText().equalsIgnoreCase("number-2")) {
+//                    final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(70, 50); // Width , height
+                    etTextMsg.getLayoutParams().width=150;
+                    etTextMsg.getLayoutParams().height=100;
+
                     etTextMsg.setInputType(InputType.TYPE_CLASS_NUMBER);
                     etTextMsg.setFilters(fArray);
+//                    etTextMsg.setLayoutParams(lparams);
                 } else {
                     etTextMsg.setInputType(InputType.TYPE_CLASS_TEXT);
 //                etTextMsg.setFilters(fArray);
@@ -840,79 +890,49 @@ public class QuestionAnswerFragment extends Fragment {
                         setchildEntity.setQuestion_id(questionID);
                         setchildEntity.setOther("");
                     }
-                    /*
-                    ANSWER TYPE-3 Image with CheckBox
+
+                      /*
+                    ANSWER TYPE-3 RadioButton with Image
                     */
                     else if (answerType.equals(answersType[3])) {
-                        int selectedID = 0;
-                        for (int i = 0; i < optionSize; i++) {
-                            questionID = questionObject.getQuestions().getQuestions().get(ques).getQuestion().getQuestionId();
-                            CheckBox checkBox = itemView.findViewById(i);
-                            if (checkBox.isChecked()) {
-                                selectedID = checkBox.getId();
-                                answerID = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID).getAnswerId();
-                                AppLog.d("Type-3 : AnswerID=", String.valueOf(answerID));
+                        int selectedID = 1;
+                        RadioGroup radioGroup = itemView.findViewWithTag(Constants.RADIO_GROUP_WITH_IMAGE + ques);
+                        flag = false;
+                        questionID = questionObject.getQuestions().getQuestions().get(ques).getQuestion().getQuestionId();
+                        if (radioGroup.getCheckedRadioButtonId() != -1) {
+                            AppLog.d("SelectedRadioButton", String.valueOf(radioGroup.getCheckedRadioButtonId()));
+                            selectedID = radioGroup.getCheckedRadioButtonId();
+                            answerID = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID - 1).getAnswerId();
+
+                            //Setting Values of QuestionId , others and answerList when internet is connected.
+                            setAnswersChild.setQuestionId(questionID);
+                            setAnswersChild.setOther("");
+                            setAnswersChild.getAnswerId().add(answerID);
+                            //Setting Values of QuestionID and Other for Locally
+                            setchildEntity.setQuestion_id(questionID);
+                            setchildEntity.setOther("");
+                            setchildEntity.getAnswerId().add(answerID);
+                            next_id = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID - 1).getNextId();
+                            if (!next_id.equals("")) {
+                                nextID = Integer.parseInt(next_id);
+                                AppLog.d("questionID,answerID,nextID", String.valueOf(questionID) + "," + answerID + "," + next_id);
+                            }
+                            flag = true;
+                        } else {
+                            if (isRequiredQuestion.equals(requiredQuestion)) {
+                                flag = false;
+                                txtQuestion.setBackgroundResource(R.drawable.border_shape_red);
+                                Utils.showSnackBar(getActivity(), getString(R.string.err_this_is_required_question));
+                                break;
+                            } else {
                                 //Setting Values of QuestionId , others and answerList when internet is connected.
-                                setAnswersChild.getAnswerId().add(answerID);
                                 setAnswersChild.setQuestionId(questionID);
                                 setAnswersChild.setOther("");
 
                                 //Setting Values of QuestionID and Other for Locally
                                 setchildEntity.setQuestion_id(questionID);
                                 setchildEntity.setOther("");
-                                setchildEntity.getAnswerId().add(answerID);
-                                next_id = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID).getNextId();
-                                if ((next_id != null)) {
-                                    if ((!next_id.equals(""))) {
-                                        nextID = Integer.parseInt(next_id);
-                                        AppLog.d("questionID,answerID,nextID", String.valueOf(questionID) + "," + answerID + "," + next_id);
-                                    }
-                                } else {
-                                    nextID = questionID + 1;
-                                }
-                                flag = true;
-                            } else {
-                                if (isRequiredQuestion.equals(requiredQuestion)) {
-                                    flag = false;
-                                    txtQuestion.setBackgroundResource(R.drawable.border_shape_red);
-                                    Utils.showSnackBar(getActivity(), getString(R.string.err_this_is_required_question));
-                                    break;
-                                } else {
-                                    //Setting Values of QuestionId , others and answerList when internet is connected.
-                                    setAnswersChild.setQuestionId(questionID);
-                                    setAnswersChild.setOther("");
-
-                                    //Setting Values of QuestionID and Other for Locally
-                                    setchildEntity.setQuestion_id(questionID);
-                                    setchildEntity.setOther("");
-                                    next_id = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID).getNextId();
-                                    if (next_id != null) {
-                                        if (!next_id.equals("")) {
-                                            nextID = Integer.parseInt(next_id);
-                                            if (nextID == -1) {
-                                                showThankYouDialog();
-                                            } else {
-                                                QuestionAnswerListActivity.quesId.push(questionID + "");
-                                                ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(findNextID(nextID), false);
-                                                AppLog.d("questionID,nextID", String.valueOf(questionID) + "," + next_id);
-                                            }
-                                        } else {
-                                            QuestionAnswerListActivity.quesId.push(String.valueOf(questionID + 1));
-                                            ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(questionID + 1, false);
-                                        }
-                                    } else {
-                                        QuestionAnswerListActivity.quesId.push(String.valueOf(questionID + 1));
-                                        ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(questionID + 1, false);
-                                    }
-
-                                }
-                            }
-                        }
-                        if (flag) {
-                            setchildEntity.setQuestion_id(questionID);
-                            setchildEntity.setOther("");
-                            next_id = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID).getNextId();
-                            if (next_id != null) {
+                                next_id = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID - 1).getNextId();
                                 if (!next_id.equals("")) {
                                     nextID = Integer.parseInt(next_id);
                                     if (nextID == -1) {
@@ -920,22 +940,126 @@ public class QuestionAnswerFragment extends Fragment {
                                     } else {
                                         QuestionAnswerListActivity.quesId.push(questionID + "");
                                         ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(findNextID(nextID), false);
-                                        AppLog.d("questionID,nextID", String.valueOf(questionID) + "," + next_id);
                                     }
-                                } else {
-                                    QuestionAnswerListActivity.quesId.push(String.valueOf(questionID + 1));
-                                    ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(questionID + 1, false);
                                 }
-                            } else {
-                                QuestionAnswerListActivity.quesId.push(String.valueOf(questionID + 1));
-                                ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(questionID + 1, false);
                             }
                         }
+                        if (flag) {
+                            next_id = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID - 1).getNextId();
+                            if (!next_id.equals("")) {
+                                nextID = Integer.parseInt(next_id);
+                                if (nextID == -1) {
+                                    showThankYouDialog();
+                                } else {
+                                    QuestionAnswerListActivity.quesId.push(questionID + "");
+                                    ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(findNextID(nextID), false);
+                                }
+                            }
+                        }
+                        //Setting Values of QuestionId , others and answerList when internet is connected.
                         setAnswersChild.setQuestionId(questionID);
                         setAnswersChild.setOther("");
+                        //Setting Values of QuestionID and Other for Locally
                         setchildEntity.setQuestion_id(questionID);
                         setchildEntity.setOther("");
                     }
+
+                    /*
+                    ANSWER TYPE-3 Image with CheckBox
+                    */
+//                    else if (answerType.equals(answersType[3])) {
+//                        int selectedID = 0;
+//                        for (int i = 0; i < optionSize; i++) {
+//                            questionID = questionObject.getQuestions().getQuestions().get(ques).getQuestion().getQuestionId();
+//                            CheckBox checkBox = itemView.findViewById(i);
+//                            if (checkBox.isChecked()) {
+//                                selectedID = checkBox.getId();
+//                                answerID = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID).getAnswerId();
+//                                AppLog.d("Type-3 : AnswerID=", String.valueOf(answerID));
+//                                //Setting Values of QuestionId , others and answerList when internet is connected.
+//                                setAnswersChild.getAnswerId().add(answerID);
+//                                setAnswersChild.setQuestionId(questionID);
+//                                setAnswersChild.setOther("");
+//
+//                                //Setting Values of QuestionID and Other for Locally
+//                                setchildEntity.setQuestion_id(questionID);
+//                                setchildEntity.setOther("");
+//                                setchildEntity.getAnswerId().add(answerID);
+//                                next_id = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID).getNextId();
+//                                if ((next_id != null)) {
+//                                    if ((!next_id.equals(""))) {
+//                                        nextID = Integer.parseInt(next_id);
+//                                        AppLog.d("questionID,answerID,nextID", String.valueOf(questionID) + "," + answerID + "," + next_id);
+//                                    }
+//                                } else {
+//                                    nextID = questionID + 1;
+//                                }
+//                                flag = true;
+//                            } else {
+//                                if (isRequiredQuestion.equals(requiredQuestion)) {
+//                                    flag = false;
+//                                    txtQuestion.setBackgroundResource(R.drawable.border_shape_red);
+//                                    Utils.showSnackBar(getActivity(), getString(R.string.err_this_is_required_question));
+//                                    break;
+//                                } else {
+//                                    //Setting Values of QuestionId , others and answerList when internet is connected.
+//                                    setAnswersChild.setQuestionId(questionID);
+//                                    setAnswersChild.setOther("");
+//
+//                                    //Setting Values of QuestionID and Other for Locally
+//                                    setchildEntity.setQuestion_id(questionID);
+//                                    setchildEntity.setOther("");
+//                                    next_id = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID).getNextId();
+//                                    if (next_id != null) {
+//                                        if (!next_id.equals("")) {
+//                                            nextID = Integer.parseInt(next_id);
+//                                            if (nextID == -1) {
+//                                                showThankYouDialog();
+//                                            } else {
+//                                                QuestionAnswerListActivity.quesId.push(questionID + "");
+//                                                ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(findNextID(nextID), false);
+//                                                AppLog.d("questionID,nextID", String.valueOf(questionID) + "," + next_id);
+//                                            }
+//                                        } else {
+//                                            QuestionAnswerListActivity.quesId.push(String.valueOf(questionID + 1));
+//                                            ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(questionID + 1, false);
+//                                        }
+//                                    } else {
+//                                        QuestionAnswerListActivity.quesId.push(String.valueOf(questionID + 1));
+//                                        ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(questionID + 1, false);
+//                                    }
+//
+//                                }
+//                            }
+//                        }
+//                        if (flag) {
+//                            setchildEntity.setQuestion_id(questionID);
+//                            setchildEntity.setOther("");
+//                            next_id = questionObject.getQuestions().getQuestions().get(ques).getOptions().get(selectedID).getNextId();
+//                            if (next_id != null) {
+//                                if (!next_id.equals("")) {
+//                                    nextID = Integer.parseInt(next_id);
+//                                    if (nextID == -1) {
+//                                        showThankYouDialog();
+//                                    } else {
+//                                        QuestionAnswerListActivity.quesId.push(questionID + "");
+//                                        ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(findNextID(nextID), false);
+//                                        AppLog.d("questionID,nextID", String.valueOf(questionID) + "," + next_id);
+//                                    }
+//                                } else {
+//                                    QuestionAnswerListActivity.quesId.push(String.valueOf(questionID + 1));
+//                                    ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(questionID + 1, false);
+//                                }
+//                            } else {
+//                                QuestionAnswerListActivity.quesId.push(String.valueOf(questionID + 1));
+//                                ((QuestionAnswerListActivity) getActivity()).binding.viewpager.setCurrentItem(questionID + 1, false);
+//                            }
+//                        }
+//                        setAnswersChild.setQuestionId(questionID);
+//                        setAnswersChild.setOther("");
+//                        setchildEntity.setQuestion_id(questionID);
+//                        setchildEntity.setOther("");
+//                    }
                     /*
                     ANSWER TYPE-4 Image with Radio Button with textBox
                     */
@@ -1426,7 +1550,7 @@ public class QuestionAnswerFragment extends Fragment {
                     Intent intent = new Intent();
                     getActivity().setResult(Activity.RESULT_OK, intent);
                     AppLog.d(TAG, "ResultOk");
-                    getActivity().onBackPressed();
+                    getActivity().finish();
                     return;
                 }
             }

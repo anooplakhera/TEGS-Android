@@ -58,6 +58,8 @@ public class Utils {
     private static SharedPreferences.Editor editor;
     private static String PREF_AUTH_TOKEN = "auth_token";
     private static String COMPANY_NAME = "company_name";
+    private static String Email = "email";
+    private static String Password = "Password";
     private static String PREF_USER_ID = "User-Id";
     private static String PREF_USER_IMAGE = "image";
     private static String PREF_QUES_ANSWER_JSON = "question_answer_data";
@@ -126,7 +128,6 @@ public class Utils {
         }
         return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), String.valueOf(jsonObject));
     }
-
 
 
     public static HashMap<String, String> getRequestMap(boolean isHeader) {
@@ -272,6 +273,27 @@ public class Utils {
         return sharedPreferences.getString(COMPANY_NAME, "");
     }
 
+    public void setEmail(String companyName) {
+        editor.putString(Email, companyName);
+        Log.d("****Email****", companyName);
+        editor.commit();
+    }
+
+    public String getEmail() {
+        return sharedPreferences.getString(Email, "");
+    }
+
+    public void setPassword(String companyName) {
+        editor.putString(Password, companyName);
+        Log.d("****Password****", companyName);
+        editor.commit();
+    }
+
+    public String getPassword() {
+        return sharedPreferences.getString(Password, "");
+    }
+
+
     public void setUserId(int id) {
         editor.putInt(PREF_USER_ID, id);
         Log.d("****UserId****", String.valueOf(id));
@@ -363,9 +385,15 @@ public class Utils {
             GetPdfData brochuresData = new Gson().fromJson(jsonArray, GetPdfData.class);
             List<PdfChildData> pdfChildDataList = brochuresData.getData();
 
-            for (PdfChildData s : pdfChildDataList) {
-                if (s.getCatetory().equals(category)) {
+            if (category.equals("Everything")) {
+                for (PdfChildData s : pdfChildDataList) {
                     setFilterList.add(s);
+                }
+            } else {
+                for (PdfChildData s : pdfChildDataList) {
+                    if (s.getCatetory().equals(category)) {
+                        setFilterList.add(s);
+                    }
                 }
             }
         }
@@ -381,6 +409,7 @@ public class Utils {
                 catList.add(s.getCatetory());
             }
         }
+        catList.add("Everything");
         return catList;
     }
 

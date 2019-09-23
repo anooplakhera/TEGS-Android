@@ -33,6 +33,7 @@ import com.tegs.databinding.DialogLogoutBinding;
 import com.tegs.model.GetChangePasswordResponse;
 import com.tegs.model.GetEditProfileResponse;
 import com.tegs.model.GetLogOutResponse;
+import com.tegs.model.GetLoginResponse;
 import com.tegs.model.GetProfileResponse;
 import com.tegs.retrofit.ApiResponseListener;
 import com.tegs.retrofit.RequestParameters;
@@ -156,7 +157,8 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
                         binding.setData(result.getData());
                     }
                     if (result.getStatus() == RequestParameters.STATUS_403) {
-                        utils.logout(mContext);
+//                        utils.logout(mContext);
+                        callLoginWS("A1");
                     }
                 }
             }
@@ -170,11 +172,52 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
     }
 
 
+    private void callLoginWS(final String type) {
+        final Utils utils = new Utils(this);
+        /*
+         Parameters
+        */
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put(RequestParameters.EMAIL, utils.getEmail());
+        hashMap.put(RequestParameters.PASSWORD, utils.getPassword());
+        hashMap.put(RequestParameters.DEVICE_TYPE, RequestParameters.DEVICE_TYPE_VALUE);
+        hashMap.put(RequestParameters.DEVICE_TOKEN, RequestParameters.DEVICE_TOKEN_VALUE);
+
+        Call<GetLoginResponse> call = RestClient.getInstance().getApiInterface().callLoginWS(Utils.getRequestMap(false), Utils.getJSONRequestBody(hashMap));
+        Utils.showProgressDialog(this);
+        RestClient.makeApiRequest(SettingsActivity.this, call, true, new ApiResponseListener() {
+            @Override
+            public void onApiResponse(Call<Object> call, Object response) {
+                AppLog.d("TAG", getString(R.string.success_response));
+                Utils.dismissDialog();
+                GetLoginResponse result = (GetLoginResponse) response;
+                if (result != null) {
+                    if (result.getStatus() == RequestParameters.STATUS) {
+                        AppLog.d("TAG", getString(R.string.success_result));
+                        utils.setPrefAuthToken(result.getData().getUserToken());
+                        if (type.equals("A1")) {
+                            callGetProfileWS();
+                        } else if (type.equals("A2")) {
+                            callChangePassWS();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onApiError(Call<Object> call, Throwable throwable) {
+                Utils.dismissDialog();
+                AppLog.e("TAG", "onError");
+                Utils.showSnackBar(SettingsActivity.this, getString(R.string.invalid_wrong_email_password));
+            }
+        });
+    }
+
     /*
     Update Profile WebService and Enable and Disable of EditText
      */
     private void disableEditText() {
-        binding.lnrPasswordLogout.setVisibility(View.GONE);
+//        binding.lnrPasswordLogout.setVisibility(View.GONE);
         binding.lnrPasswordLogout.animate().alpha(1.0f);
         binding.lnrMessage.setVisibility(View.VISIBLE);
         binding.lnrEditButtons.setVisibility(View.GONE);
@@ -224,7 +267,7 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
             profilepicReq = RequestBody.create(MediaType.parse("form-userDataModel"), imgFile);
             fileToUpload = MultipartBody.Part.createFormData(RequestParameters.IMAGE, imgFile.getName(), profilepicReq);
         }
-        Call<GetEditProfileResponse> call = RestClient.getInstance(true).getApiInterface().callEditProfileWS(Utils.getRequestMap(true),fileToUpload, deviceType, name, phone_number, deviceToken, phone_no_2);
+        Call<GetEditProfileResponse> call = RestClient.getInstance(true).getApiInterface().callEditProfileWS(Utils.getRequestMap(true), fileToUpload, deviceType, name, phone_number, deviceToken, phone_no_2);
         RestClient.makeApiRequest(mActivity, call, true, new ApiResponseListener() {
             @Override
             public void onApiResponse(Call<Object> call, Object response) {
@@ -335,7 +378,7 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
         hashMap.put(RequestParameters.OLD_PASS, diaChangePassBinding.etCurrentPassword.getText().toString().trim());
         hashMap.put(RequestParameters.NEW_PASS, diaChangePassBinding.etNewPassword.getText().toString().trim());
 
-        Call<GetChangePasswordResponse> call = RestClient.getInstance(true).getApiInterface().callChangePassWS(Utils.getRequestMap(true),Utils.getJSONRequestBody(hashMap));
+        Call<GetChangePasswordResponse> call = RestClient.getInstance(true).getApiInterface().callChangePassWS(Utils.getRequestMap(true), Utils.getJSONRequestBody(hashMap));
         RestClient.makeApiRequest(mActivity, call, true, new ApiResponseListener() {
             @Override
             public void onApiResponse(Call<Object> call, Object response) {
@@ -349,7 +392,8 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
                 }
                 if (result.getStatus() == RequestParameters.STATUS_403) {
                     Utils.dismissDialog();
-                    utils.logout(mContext);
+//                    utils.logout(mContext);
+                    callLoginWS("A2");
                 }
             }
 
@@ -392,6 +436,7 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
                         Utils.showSnackBar(mActivity, getString(R.string.success_logout));
                         RestClient.clearInstance();
                         utils.logout(mContext);
+//                        callLoginWS("A3");
                     }
                 }
             }

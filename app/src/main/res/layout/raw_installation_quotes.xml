@@ -55,13 +55,15 @@
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txt_sent"
                     style="@style/commonButton"
-                    android:layout_width="@dimen/dp_70"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingLeft="@dimen/dp_3"
                     android:paddingTop="@dimen/dp_3"
+                    android:paddingRight="@dimen/dp_3"
                     android:paddingBottom="@dimen/dp_3"
-                    android:text="@string/btn_sent"
-                    android:textSize="@dimen/sp_13" />
+                    android:text="@string/btn_sent_new"
+                    android:textSize="@dimen/sp_11" />
 
                 <ImageView
                     android:id="@+id/txt_Delete"

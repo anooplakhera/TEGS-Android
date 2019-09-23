@@ -96,7 +96,7 @@ public class InstallationQuotesAdapter extends RecyclerView.Adapter<Installation
                         int rowID = getData.getRow_id();
                         if (rowID != 0) {
                             AppLog.d("Local Data Row_ID", String.valueOf(rowID));
-                            onClickQues.onButtonClick(rowID);
+                            onClickQues.onButtonClick(rowID,position);
                         }
                     }
                 });
@@ -106,7 +106,7 @@ public class InstallationQuotesAdapter extends RecyclerView.Adapter<Installation
                 binding.lnrInstallQuotes.setBackgroundResource(R.color.colorWhite);
                 binding.txtSent.setBackgroundResource(R.drawable.rounded_corner_coloraccent);
                 binding.txtSent.setClickable(false);
-                binding.txtSent.setText(R.string.btn_sent);
+                binding.txtSent.setText(R.string.btn_sent_new);
             }
 
 
@@ -149,7 +149,7 @@ public class InstallationQuotesAdapter extends RecyclerView.Adapter<Installation
     public interface onClickQues {
         void onClickQues(int quoteId, String status);
 
-        void onButtonClick(int rowID);
+        void onButtonClick(int rowID,int pos);
     }
 
     private void callDeleteQuote(int quoteID, final int position) {

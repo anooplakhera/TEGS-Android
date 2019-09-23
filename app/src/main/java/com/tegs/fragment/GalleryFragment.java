@@ -21,7 +21,6 @@ import com.tegs.utils.Constants;
 import com.tegs.utils.Utils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -68,7 +67,7 @@ public class GalleryFragment extends Fragment {
 
         //Recycler View With Layout grid
         rvGridGallery.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        gridFragAdapter = new GalleryGridFragAdapter(getActivity(),getGalleryResponses);
+        gridFragAdapter = new GalleryGridFragAdapter(getActivity(), getGalleryResponses);
         rvGridGallery.setAdapter(gridFragAdapter);
 
         handleImageClick();
@@ -96,7 +95,7 @@ public class GalleryFragment extends Fragment {
         List<VideoChildDataList> filterList = getFilteredAsCategory(((VideoAndPhotoActivity)
                 getActivity()).loadJSONFromAsset(Constants.GALLERY_JSON), ((VideoAndPhotoActivity) getActivity()).categoryName);
         if (filterList.size() != 0) {
-            gridFragAdapter = new GalleryGridFragAdapter(getActivity(),new ArrayList<VideoChildDataList>());
+            gridFragAdapter = new GalleryGridFragAdapter(getActivity(), new ArrayList<VideoChildDataList>());
             gridFragAdapter.clearList();
             gridFragAdapter.addList(filterList);
             rvGridGallery.setAdapter(gridFragAdapter);
@@ -110,9 +109,15 @@ public class GalleryFragment extends Fragment {
             GetVideosData brochuresData = new Gson().fromJson(jsonArray, GetVideosData.class);
             List<VideoChildDataList> pdfChildDataList = brochuresData.getData();
 
-            for (VideoChildDataList s : pdfChildDataList) {
-                if (s.getCatetory().equals(category)) {
+            if (category.equals("Everything")) {
+                for (VideoChildDataList s : pdfChildDataList) {
                     setFilterList.add(s);
+                }
+            } else {
+                for (VideoChildDataList s : pdfChildDataList) {
+                    if (s.getCatetory().equals(category)) {
+                        setFilterList.add(s);
+                    }
                 }
             }
         }

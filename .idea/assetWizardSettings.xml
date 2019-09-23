@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_right_arrow" />
-                            <entry key="sourceFile" value="C:\Users\HP" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_delete" />
+                            <entry key="sourceFile" value="C:\Users\HP\Downloads\delete.svg" />
                           </map>
                         </option>
                       </PersistentState>

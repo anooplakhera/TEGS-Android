@@ -45,14 +45,22 @@
                     app:cardCornerRadius="@dimen/dp_10"
                     app:cardElevation="@dimen/dp_5">
 
-                    <com.facebook.drawee.view.SimpleDraweeView
+                    <!--<com.facebook.drawee.view.SimpleDraweeView-->
+                        <!--android:id="@+id/sdv_instruction_image"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="@dimen/dp_150"-->
+                        <!--android:clickable="false"-->
+                        <!--android:scaleType="fitXY"-->
+                        <!--android:visibility="gone"-->
+                        <!--fresco:roundedCornerRadius="@dimen/dp_15" />-->
+
+                    <com.tegs.utils.ResizableImageView
+                        android:visibility="gone"
                         android:id="@+id/sdv_instruction_image"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_150"
-                        android:clickable="false"
-                        android:scaleType="fitXY"
-                        android:visibility="gone"
-                        fresco:roundedCornerRadius="@dimen/dp_15" />
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:adjustViewBounds="true"/>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.AppCompatTextView

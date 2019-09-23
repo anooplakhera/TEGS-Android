@@ -124,6 +124,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         utils.setPrefAuthToken(result.getData().getUserToken());
                         utils.setUserId(result.getData().getId());
                         utils.setCompanyName(result.getData().getName());
+                        utils.setPassword(binding.etPassword.getText().toString().trim());
+                        utils.setEmail(binding.etEmail.getText().toString().trim());
                         callQuestionAnswersWS();
                         startactivtiy(HomeActivity.class);
                         finish();

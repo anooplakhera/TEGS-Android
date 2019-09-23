@@ -38,7 +38,7 @@
     <string name="dummy_telephone_number">9876543210</string>
     <string name="email_address">Email Address</string>
     <string name="dummy_email">john@gmail.com</string>
-    <string name="GDPR"><h1>GDPR Message </h1>\n "'The information provided will only be used to assist us in sending you accurate quotations'</string>
+    <string name="GDPR">The information provided will only be used to assist us in sending you accurate quotations</string>
 
     <!--New Quote-->
     <string name="title_new_quote">New Quote</string>
@@ -59,7 +59,7 @@
 
     <!--Search Bar-->
     <string name="search_by_name">Search by name…</string>
-    <string name="search_by_date">Search by date…</string>
+    <string name="search_by_date">Search by text…</string>
 
     <!--Spare Part Quotes-->
     <string name="create_spare_part">Create Spare Part Quotes</string>
@@ -121,8 +121,10 @@
     <string name="btn_submit">SUBMIT</string>
     <string name="btn_save">SAVE</string>
     <string name="btn_sent">SENT</string>
+    <string name="btn_sent_new">SUBMITTED</string>
     <string name="btn_delete">DELETE</string>
     <string name="btn_pending">PENDING</string>
+    <string name="btn_pending_new">PRESS TO SEND</string>
     <string name="btn_yes">Yes</string>
     <string name="btn_no">No</string>
 
